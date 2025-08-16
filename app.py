@@ -34,7 +34,7 @@ def get_last_24h_tweets(username, nitter_instance="https://nitter.net", max_page
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
     # Use the path set in setup.sh
-    driver_path = os.environ.get("CHROMEDRIVER_PATH", "/usr/local/bin/chromedriver")
+    driver_path = "./chromedriver"
     driver = webdriver.Chrome(driver_path, options=chrome_options)
     tweets = []
     now = datetime.utcnow()
