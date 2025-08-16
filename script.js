@@ -9,10 +9,11 @@ app.get('/tweets/:username', async (req, res) => {
 
   try {
     const browser = await puppeteer.launch({
-    headless: true,
-    executablePath: puppeteer.executablePath(), 
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-    });
+  headless: true,
+  executablePath: '/opt/render/.cache/puppeteer/chrome/linux-139.0.7258.68/chrome-linux64/chrome',
+  args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  });
+
 
     const page = await browser.newPage();
     await page.setUserAgent(
