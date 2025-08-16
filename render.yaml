@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: nitter-scraper
+    env: python
+    plan: starter
+    buildCommand: ./setup.sh
+    startCommand: python app.py
+    envVars:
+      - key: CHROMEDRIVER_PATH
+        value: /usr/local/bin/chromedriver
+    autoDeploy: true
+    disk:
+      name: scraper-disk
+      mountPath: /var/scraper
