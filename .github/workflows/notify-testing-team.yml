@@ -1,0 +1,30 @@
+name: Notify Testing Team
+
+on:
+  push:
+    branches:
+      - main   # Triggers only when changes are pushed/merged into main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true   # <-- Add this for SSL/TLS
+          username: ${{ secrets.EMAIL_USER }}
+          password: ${{ secrets.EMAIL_PASS }}
+          subject: "Code Merged to Main Branch"
+          to: "abithanmasss@gmail.com"
+          from: ${{ secrets.EMAIL_USER }}
+          body: |
+            Hello Testing Team,
+
+            A new merge has been completed in the **main branch**.  
+            Please start testing the latest changes.
+
+            Regards,  
+            GitHub Actions
