@@ -18,7 +18,7 @@ jobs:
           username: ${{ secrets.EMAIL_USER }}
           password: ${{ secrets.EMAIL_PASS }}
           subject: "Code Merged to Main Branch"
-          to: "abithanmasss@gmail.com"
+          to: "abithan.p.ihub@snsgroups.com"
           from: ${{ secrets.EMAIL_USER }}
           body: |
             Hello Testing Team,
